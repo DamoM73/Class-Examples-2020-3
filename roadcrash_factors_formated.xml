@@ -1,0 +1,47 @@
+<data>
+    <row _id="1">
+        <Crash_Year>2001</Crash_Year>
+        <Crash_Police_Region>Brisbane</Crash_Police_Region>
+        <Crash_Severity>Fatal</Crash_Severity>
+        <Involving_Drink_Driving>No</Involving_Drink_Driving>
+        <Involving_Driver_Speed>No</Involving_Driver_Speed>
+        <Involving_Fatigued_Driver>No</Involving_Fatigued_Driver>
+        <Involving_Defective_Vehicle>No</Involving_Defective_Vehicle>
+        <Count_Crashes>31</Count_Crashes>
+        <Count_Fatality>31</Count_Fatality>
+        <Count_Hospitalised>8</Count_Hospitalised>
+        <Count_Medically_Treated>6</Count_Medically_Treated>
+        <Count_Minor_Injury>2</Count_Minor_Injury>
+        <Count_All_Casualties>47</Count_All_Casualties>
+    </row>
+    <row _id="2">
+        <Crash_Year>2001</Crash_Year>
+        <Crash_Police_Region>Brisbane</Crash_Police_Region>
+        <Crash_Severity>Fatal</Crash_Severity>
+        <Involving_Drink_Driving>No</Involving_Drink_Driving>
+        <Involving_Driver_Speed>No</Involving_Driver_Speed>
+        <Involving_Fatigued_Driver>No</Involving_Fatigued_Driver>
+        <Involving_Defective_Vehicle>Yes</Involving_Defective_Vehicle>
+        <Count_Crashes>1</Count_Crashes>
+        <Count_Fatality>1</Count_Fatality>
+        <Count_Hospitalised>0</Count_Hospitalised>
+        <Count_Medically_Treated>0</Count_Medically_Treated>
+        <Count_Minor_Injury>0</Count_Minor_Injury>
+        <Count_All_Casualties>1</Count_All_Casualties>
+    </row>
+    <row _id="3">
+        <Crash_Year>2001</Crash_Year>
+        <Crash_Police_Region>Brisbane</Crash_Police_Region>
+        <Crash_Severity>Fatal</Crash_Severity>
+        <Involving_Drink_Driving>No</Involving_Drink_Driving>
+        <Involving_Driver_Speed>Yes</Involving_Driver_Speed>
+        <Involving_Fatigued_Driver>No</Involving_Fatigued_Driver>
+        <Involving_Defective_Vehicle>No</Involving_Defective_Vehicle>
+        <Count_Crashes>8</Count_Crashes>
+        <Count_Fatality>8</Count_Fatality>
+        <Count_Hospitalised>5</Count_Hospitalised>
+        <Count_Medically_Treated>0</Count_Medically_Treated>
+        <Count_Minor_Injury>0</Count_Minor_Injury>
+        <Count_All_Casualties>13</Count_All_Casualties>
+    </row>
+</data>
