@@ -9,15 +9,17 @@ def sql_query(db_file, query):
         
         return cursor.fetchall()
 
-
-
 # ---- MAIN PROGRAM ----
 query_command = """
-                SELECT DISTINCT year 
-                FROM movie;
+                SELECT country, COUNT(dirname)
+                FROM director
+                GROUP BY country;
                 """
 
 query_results = sql_query(DATABASEFILE,query_command)
 
 for row in query_results:
-    print(row[0])
+    if row[1] == 1:
+        print(f"{row[0]} has {row[1]} director.")
+    else:
+        print(f"{row[0]} has {row[1]} directors.")
