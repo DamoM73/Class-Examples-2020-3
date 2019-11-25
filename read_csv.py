@@ -1,15 +1,18 @@
 import csv
 
 with open('roadcrash_factors.csv', 'r') as rcf_file:
-    csv_reader = csv.reader(rcf_file, delimiter=",")
-
+    #csv_reader = csv.reader(rcf_file, delimiter=",")
+   
     line_count = 0
 
     for row in rcf_file:
         row = list(row.split(','))
         
+        # ignore the first line, as it is only the field names
         if line_count == 0:
             line_count += 1
+        
+        # for every other row, extract the data you want from the apporpriate rows
         else:
             year = row[1]
             severity = row[3]
