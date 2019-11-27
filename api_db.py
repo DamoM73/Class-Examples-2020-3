@@ -1,5 +1,8 @@
 import requests
 import json
+import sqlite3
+
+DB_FILE = "food_trucks.db"
 
 def jprint(obj):
     # Display formatted data only if retrieval is successful
@@ -8,6 +11,18 @@ def jprint(obj):
     # If retieval not successful, display error number
     else:
         print(obj.status_code, "error in retrieveal API")
+
+def create_table(filename, table, sqlcommand):
+    # connecting to dtabase file
+    with sqlite3.connect(filename) as database:
+        cursor = database.cursor()
+
+        # remove previous table and data
+        cursor.execute(f"DROP TABLE IF EXISTS {table}")
+
+        # create empty table
+        cursor.execute(sqlcommand)
+
 
 # ---- MAIN PROGRAM ----
 
@@ -30,4 +45,16 @@ bookings_data = requests.get("https://www.bnefoodtrucks.com.au/api/1/bookings")
 jprint(trucks_data)
 jprint(sites_data)
 jprint(bookings_data)
->>>>>>> 17da68bba5f0283643da9881a964bfc5812d7d77
+
+# --- create database tables ---
+# trucks table
+create_trucks = """
+                CREATE TABLE Truck(
+                    truck_id INTEGER PRIMARY KEY,
+                    name TEXT NOT NULL,
+                    category TEXT NOT NULL,
+                    website TEXT
+                );
+                """
+
+create_table(DB_FILE, "trucks", create_trucks)
