@@ -12,13 +12,13 @@ def jprint(obj):
     else:
         print(obj.status_code, "error in retrieveal API")
 
-def create_table(filename, table, sqlcommand):
+def create_table(filename, tablename, sqlcommand):
     # connecting to dtabase file
     with sqlite3.connect(filename) as database:
         cursor = database.cursor()
 
         # remove previous table and data
-        cursor.execute(f"DROP TABLE IF EXISTS {table}")
+        cursor.execute(f"DROP TABLE IF EXISTS {tablename};")
 
         # create empty table
         cursor.execute(sqlcommand)
@@ -42,14 +42,14 @@ bookings_data = requests.get("https://www.bnefoodtrucks.com.au/api/1/bookings")
 #print(bookings_data.json())
 
 # display formatted data
-jprint(trucks_data)
-jprint(sites_data)
-jprint(bookings_data)
+#jprint(trucks_data)
+#jprint(sites_data)
+#jprint(bookings_data)
 
 # --- create database tables ---
 # trucks table
 create_trucks = """
-                CREATE TABLE Truck(
+                CREATE TABLE Trucks(
                     truck_id INTEGER PRIMARY KEY,
                     name TEXT NOT NULL,
                     category TEXT NOT NULL,
@@ -57,4 +57,4 @@ create_trucks = """
                 );
                 """
 
-create_table(DB_FILE, "trucks", create_trucks)
+create_table(DB_FILE, "Trucks", create_trucks)
