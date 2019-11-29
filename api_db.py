@@ -105,6 +105,7 @@ create_table(DB_FILE,"Bookings",create_bookings_tble)
 
 values = []
 for row in trucks_data.json():
+    
     truck_id = row['truck_id']
     name = row['name']
     category = row['category']
@@ -116,3 +117,16 @@ for row in trucks_data.json():
     values.append(f'{truck_id}, "{name}", "{category}", "{website}"')
 
 table_insert(DB_FILE,"Trucks", values)
+
+# sites table
+values = []
+for row in sites_data.json():
+    site_id = row['site_id']
+    street = row['street']
+    suburb = row['suburb']
+    postcode = row['postcode']
+    latitude = row['latitude']
+    longitude = row['longitude']
+    values.append(f'{site_id}, "{street}", "{suburb}", "{postcode}", "{latitude}", "{longitude}" ')
+
+table_insert(DB_FILE,"Sites", values)
