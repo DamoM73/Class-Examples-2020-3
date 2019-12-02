@@ -57,12 +57,7 @@ bookings_data = requests.get("https://www.bnefoodtrucks.com.au/api/1/bookings")
 #print(bookings_data.json())
 
 # display formatted data
-<<<<<<< HEAD
-jprint(trucks_data)
-jprint(sites_data)
-jprint(bookings_data)
 
-=======
 #jprint(trucks_data)
 #jprint(sites_data)
 #jprint(bookings_data)
@@ -108,7 +103,6 @@ create_table(DB_FILE,"Bookings",create_bookings_tble)
 # create a list with an element for each row of the json file
 
 # truck table
-
 values = []
 for row in trucks_data.json():
     
@@ -136,4 +130,5 @@ for row in sites_data.json():
     values.append(f'{site_id}, "{street}", "{suburb}", "{postcode}", "{latitude}", "{longitude}" ')
 
 table_insert(DB_FILE,"Sites", values)
->>>>>>> 6e774fe2026eb09d0210bfa9f03bfc6ce4011c15
+
+# bookings table
