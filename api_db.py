@@ -30,4 +30,4 @@ bookings_data = requests.get("https://www.bnefoodtrucks.com.au/api/1/bookings")
 jprint(trucks_data)
 jprint(sites_data)
 jprint(bookings_data)
->>>>>>> 17da68bba5f0283643da9881a964bfc5812d7d77
+
