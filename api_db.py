@@ -31,7 +31,7 @@ def table_insert(db_file, table_name, values):
         # execute an insert statement for each row of provided data list
         records = 0
         for row in values:
-            print(row)
+            #print(row)
             cursor.execute(f"""
                             INSERT INTO {table_name}
                             VALUES ({row});
@@ -119,6 +119,7 @@ for row in trucks_data.json():
 table_insert(DB_FILE,"Trucks", values)
 
 # sites table
+# create values list
 values = []
 for row in sites_data.json():
     site_id = row['site_id']
@@ -128,7 +129,19 @@ for row in sites_data.json():
     latitude = row['latitude']
     longitude = row['longitude']
     values.append(f'{site_id}, "{street}", "{suburb}", "{postcode}", "{latitude}", "{longitude}" ')
-
+# insert values into table
 table_insert(DB_FILE,"Sites", values)
 
 # bookings table
+# create values list
+values = []
+for row in bookings_data.json():
+    booking_id = (row['start'][0:4]+row['start'][5:7]+row['start'][8:10]+row['site_id']+row['truck_id'])
+    site_id = row['site_id']
+    truck_id = row['truck_id']
+    date = row['start'][8:10]+"-"+row['start'][5:7]+"-"+row['start'][0:4]
+    start = row['start'][11:16]
+    finish = row['finish'][11:16]
+    values.append(f'{booking_id}, {site_id}, {truck_id}, "{date}", "{start}", "{finish}"')
+# insert values into table
+table_insert(DB_FILE,"Bookings",values)
